@@ -21,7 +21,9 @@ add_header Expect-CT 'max-age=60, report-uri="https://mydomain.com/report"';
 
 # Content-Security-Policy (CSP)
 # This helps prevents XSS, clickjacking, code injection, etc., attacks
-# Add to html file
+# github demo:
+add_header Content-Security-Policy: default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' uploads.github.com www.githubstatus.com collector.githubapp.com api.github.com www.google-analytics.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com cdn.optimizely.com logx.optimizely.com/v1/events wss://live.github.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com; frame-ancestors 'none'; frame-src render.githubusercontent.com; img-src 'self' data: github.githubassets.com identicons.github.com collector.githubapp.com github-cloud.s3.amazonaws.com *.githubusercontent.com; manifest-src 'self'; media-src 'none'; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src github.com/socket-worker.js
+
 
 # X-XSSProtection
 # These header detect dangerous HTML input and either prevent the site from loading or remove potentially malicious scripts
@@ -32,3 +34,21 @@ add_header X-XSS-Protection "1; mode=block";
 # Adversely, an attacker can introduce a malicious executable script such as an image. When acted on by MIME sniffing could have the script executed
 # X-Content-Type-Options: nosniff
 add_header X-Content-Type-Options nosniff;
+
+# Feature-Policy: <directive> <allowlist>
+# The HTTP Feature-Policy header provides a mechanism to allow and deny the use of browser features in its own frame, and in content within any <iframe> elements in the document.
+# Example: disable Microphone and Geolocation APIs
+add_header Feature-Policy: microphone 'none'; geolocation 'none';
+
+# Referrer-Policy
+add_header Referrer-Policy same-origin;
+
+# X-Permitted-Cross-Domain-Policies
+add_header X-Permitted-Cross-Domain-Policies master-only;
+
+# X-Download-Options
+add_header "X-Download-Options" "noopen";
+
+# hide server version
+# Syntax:  server_tokens on | off | build | string;
+server_tokens off;

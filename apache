@@ -12,3 +12,9 @@ Header set X-XSS-Protection "1; mode=block“
 
 # X-Content-Type-Options
 Header set X-Content-Type-Options nosniff
+
+# Referrer-Policy
+Header set Referrer-Policy "no-referrer"
+
+# X-Permitted-Cross-Domain-Policies
+Header set X-Permitted-Cross-Domain-Policies "none"
