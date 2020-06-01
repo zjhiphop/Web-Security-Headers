@@ -36,8 +36,8 @@ Web Security Headers
 ### tools
 
 Check Website HTTP Response Header
-– https://gf.dev/http-headers-test Secure Headers Test
-– https://gf.dev/secure-headers-test Scott Helme – Security Header Scanner
-– https://securityheaders.com HTTP Headers Reference
-– https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers HTTP Compatibility Among Browsers
-– https://caniuse.com
+- https://gf.dev/http-headers-test Secure Headers Test
+- https://gf.dev/secure-headers-test Scott Helme – Security Header Scanner
+- https://securityheaders.com HTTP Headers Reference
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers HTTP Compatibility Among Browsers
+- https://caniuse.com
