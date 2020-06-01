@@ -1,0 +1,15 @@
+# HSTS
+Name: Strict-Transport-Security
+Value: max-age=31536000; includeSubDomains; preload
+
+# X-Frame-Options
+Name: X-Frame-Options
+Value: DENY
+
+X-XSS-Protection
+Name: X-XSS-Protection
+Value: 1; mode=block
+
+# X-Content-Type-Options
+Name: X-Content-Type-Options
+Value: nosniff

@@ -1,0 +1,34 @@
+# HTTP Strict Transport Security (HSTS) - Implementation
+# Syntax:
+# Strict-Transport-Security: max-age=<expire-time>
+#   includeSubDomains
+#   preload
+#
+add_header Strict-Transport-Security 'max-age=31536000; includeSubDomains; preload';
+
+
+# X-Frame-Options: deny
+#   sameorigin
+#   allow-from url (deprecated)
+add_header X-Frame-Options “DENY”;
+
+
+# Expect-CT
+# Expect-CT detects certificates issued by rogue Certificate Authorities (CA) or prevents them from doing so
+# Expect-CT: max-age enforce report-uri
+add_header Expect-CT 'max-age=60, report-uri="https://mydomain.com/report"';
+
+
+# Content-Security-Policy (CSP)
+# This helps prevents XSS, clickjacking, code injection, etc., attacks
+# Add to html file
+
+# X-XSSProtection
+# These header detect dangerous HTML input and either prevent the site from loading or remove potentially malicious scripts
+# X-XSS-Protection: 0 1 mode=block
+add_header X-XSS-Protection "1; mode=block";
+
+# X-Content-Type-Options
+# Adversely, an attacker can introduce a malicious executable script such as an image. When acted on by MIME sniffing could have the script executed
+# X-Content-Type-Options: nosniff
+add_header X-Content-Type-Options nosniff;
