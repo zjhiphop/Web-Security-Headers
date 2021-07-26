@@ -1,7 +1,7 @@
 Web Security Headers
 ======================
 
-> A response headers config demo which follow OWASP HTTP Security HEADERS spec.
+> Response headers config demo which follow OWASP HTTP Security HEADERS spec.
 
 
 ### Category
